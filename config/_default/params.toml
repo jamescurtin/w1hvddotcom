@@ -1,0 +1,66 @@
+#################### default parameters ################################
+favicon = "images/favicon.png"
+logo = "images/w1hvd-logo.png"
+logo_darkmode = "images/w1hvd-logo.png"
+logo_width = "160px"
+logo_height = "32px"
+logo_webp = true
+logo_text = "W1HVD"
+navbar_fixed = true
+theme_switcher = true
+theme_default = "system"
+mainSections = ["blog"]
+custom_script = ""
+copyright = "James W. Curtin, Jr. (W1HVD) All Rights Reserved"
+
+# Preloader
+[preloader]
+enable = false
+preloader = "" # use jpg, png, svg or gif format.
+
+# Navigation button
+[navigation_button]
+enable = false
+label = "get a quote"
+link = "contact"
+
+# search
+# search module: https://github.com/gethugothemes/hugo-modules/tree/master/search
+[search]
+enable = true
+primary_color = "#121212"
+include_sections = ["blog"]
+show_image = true
+show_description = true
+show_tags = true
+show_categories = true
+
+
+# seo meta data for OpenGraph / Twitter Card
+# seo module: https://github.com/gethugothemes/hugo-modules/tree/master/seo-tools/basic-seo
+[metadata]
+keywords = ["HAM", "Radio", "W1HVD"]
+description = "W1HVD Home Page"
+author = "James Curtin"
+image = "images/w1hvd-logo.png"
+
+# cookies
+# cookies module: https://github.com/gethugothemes/hugo-modules/tree/master/components/cookie-consent
+[cookies]
+enable = false
+expire_days = 60
+content = "This site uses cookies. By continuing to use this website, you agree to their use."
+button = "I Accept"
+
+######################## sidebar widgets #########################
+[widgets]
+sidebar = ["categories", "tags"]
+
+
+# google map
+[google_map]
+enable = false
+map_api_key = "AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU"
+map_latitude = "51.5223477"
+map_longitude = "-0.1622023"
+map_marker = "images/marker.png"

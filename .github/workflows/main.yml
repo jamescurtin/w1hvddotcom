@@ -13,6 +13,11 @@ jobs:
         with:
           submodules: true
           fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: "npm"
+      - run: npm ci
       - name: Read .env
         id: hugo-version
         run: |

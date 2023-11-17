@@ -1,0 +1,50 @@
+############# English navigation ##############
+
+# main menu
+[[main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[main]]
+name = "QRZ"
+url = "https://www.qrz.com/db/W1HVD"
+weight = 2
+
+# [[main]]
+# weight = 3
+# name = "Pages"
+# hasChildren = true
+
+# [[main]]
+# parent = "Pages"
+# name = "Blog"
+# url = "blog/"
+
+# [[main]]
+# parent = "Pages"
+# name = "Contact"
+# url = "contact/"
+
+# [[main]]
+# parent = "Pages"
+# name = "Authors"
+# url = "authors/"
+
+# [[main]]
+# parent = "Pages"
+# name = "Categories"
+# url = "categories/"
+
+# [[main]]
+# parent = "Pages"
+# name = "404 Page"
+# url = "404/"
+
+
+# footer menu
+[[footer]]
+name = "About"
+url = "about/"
+weight = 1
+

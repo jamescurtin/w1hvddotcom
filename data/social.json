@@ -1,0 +1,19 @@
+{
+  "main": [
+    {
+      "name": "QRZ",
+      "icon": "fa-solid fa-envelopes-bulk",
+      "link": "https://www.qrz.com/db/W1HVD/"
+    },
+    {
+      "name": "FCC",
+      "icon": "fa-solid fa-gavel",
+      "link": "https://wireless2.fcc.gov/UlsApp/UlsSearch/license.jsp?licKey=4618213/"
+    },
+    {
+      "name": "Github",
+      "icon": "fab fa-github",
+      "link": "https://github.com/jamescurtin/w1hvddotcom/"
+    }
+  ]
+}

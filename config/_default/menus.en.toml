@@ -1,0 +1,18 @@
+############# English navigation ##############
+
+# main menu
+[[main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[main]]
+name = "QRZ"
+url = "https://www.qrz.com/db/W1HVD"
+weight = 2
+
+# footer menu
+[[footer]]
+name = "About"
+url = "about/"
+weight = 1

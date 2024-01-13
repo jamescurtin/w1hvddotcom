@@ -9,17 +9,15 @@ Page for the amateur station W1HVD
 This repository contains submodules.
 Be sure to recursively clone all submodules (_e.g._ `git clone --recursive ...`).
 
-## Running
-
-To run locally:
-
 To setup for the first time:
 
 ```bash
 npm install
 ```
 
-Thereafter, start the local dev server by running:
+### Running
+
+Start the local dev server by running:
 
 ```bash
 npm run dev
@@ -27,10 +25,26 @@ npm run dev
 
 and navigate to http://localhost:1313
 
-## Updating
+### Updating
 
 ```bash
 npm run update-modules
 ```
+
+### Linting
+
+To attempt to auto-fix lint errors:
+
+```bash
+npm run format
+```
+
+To fail on lint errors:
+
+```bash
+npm run format-check
+```
+
+## Deployments
 
 The site auto-deploys when merging to main.

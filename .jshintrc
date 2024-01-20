@@ -54,6 +54,6 @@
   "globals": {
     "jQuery": false,
     "google": false,
-    "$": false,
-  },
+    "$": false
+  }
 }

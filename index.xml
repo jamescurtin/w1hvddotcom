@@ -1,1 +1,78 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>W1HVD</title><link>https://w1hvd.com/</link><description>Recent content on W1HVD</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://w1hvd.com/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>W1HVD</title><link>https://w1hvd.com/</link><description>Recent content on W1HVD</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://w1hvd.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Weather</title><link>https://w1hvd.com/weather/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://w1hvd.com/weather/</guid><description>&lt;p&gt;Live conditions from the W1HVD weather station:&lt;/p&gt;
+&lt;div
+ id="aw-weather"
+ data-endpoint="https://w1hvd-weather.jamescurtin.workers.dev"
+ class="not-prose border-border dark:border-darkmode-border bg-light dark:bg-darkmode-light my-6 rounded-lg border p-6"&gt;
+ &lt;div class="mb-5 flex items-center justify-between"&gt;
+ &lt;h3 class="h5 mb-0"&gt;W1HVD Conditions&lt;/h3&gt;
+ &lt;span
+ id="aw-updated"
+ class="text-text-light dark:text-darkmode-text-light text-sm"
+ &gt;&amp;mdash;&lt;/span
+ &gt;
+ &lt;/div&gt;
+
+ &lt;div class="grid grid-cols-2 gap-5 sm:grid-cols-3"&gt;
+ &lt;div class="text-center"&gt;
+ &lt;div class="text-text-light dark:text-darkmode-text-light text-sm"&gt;
+ Temperature
+ &lt;/div&gt;
+ &lt;div
+ class="text-text-dark dark:text-darkmode-text-dark text-2xl font-bold"&gt;
+ &lt;span id="aw-tempf"&gt;&amp;mdash;&lt;/span&gt;°F
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="text-center"&gt;
+ &lt;div class="text-text-light dark:text-darkmode-text-light text-sm"&gt;
+ Feels Like
+ &lt;/div&gt;
+ &lt;div
+ class="text-text-dark dark:text-darkmode-text-dark text-2xl font-bold"&gt;
+ &lt;span id="aw-feels"&gt;&amp;mdash;&lt;/span&gt;°F
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="text-center"&gt;
+ &lt;div class="text-text-light dark:text-darkmode-text-light text-sm"&gt;
+ Humidity
+ &lt;/div&gt;
+ &lt;div
+ class="text-text-dark dark:text-darkmode-text-dark text-2xl font-bold"&gt;
+ &lt;span id="aw-humidity"&gt;&amp;mdash;&lt;/span&gt;%
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="text-center"&gt;
+ &lt;div class="text-text-light dark:text-darkmode-text-light text-sm"&gt;
+ Wind
+ &lt;/div&gt;
+ &lt;div
+ class="text-text-dark dark:text-darkmode-text-dark text-2xl font-bold"&gt;
+ &lt;span id="aw-wind"&gt;&amp;mdash;&lt;/span&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="text-center"&gt;
+ &lt;div class="text-text-light dark:text-darkmode-text-light text-sm"&gt;
+ Pressure
+ &lt;/div&gt;
+ &lt;div
+ class="text-text-dark dark:text-darkmode-text-dark text-2xl font-bold"&gt;
+ &lt;span id="aw-pressure"&gt;&amp;mdash;&lt;/span&gt;
+ &lt;span class="text-base font-normal"&gt;inHg&lt;/span&gt;
+ 
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="text-center"&gt;
+ &lt;div class="text-text-light dark:text-darkmode-text-light text-sm"&gt;
+ Rain Today
+ &lt;/div&gt;
+ &lt;div
+ class="text-text-dark dark:text-darkmode-text-dark text-2xl font-bold"&gt;
+ &lt;span id="aw-rain"&gt;&amp;mdash;&lt;/span&gt;
+ &lt;span class="text-base font-normal"&gt;in&lt;/span&gt;
+ 
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+
+ &lt;p
+ id="aw-error"
+ class="text-text-light dark:text-darkmode-text-light mt-5 hidden text-sm"&gt;&lt;/p&gt;</description></item></channel></rss>

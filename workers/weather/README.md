@@ -40,6 +40,20 @@ npm run deploy
 `https://w1hvd-weather.<subdomain>.workers.dev`), or attach a custom route such
 as `https://api.w1hvd.com/weather`.
 
+## Continuous deployment
+
+After the first manual deploy, `.github/workflows/deploy-worker.yml` redeploys
+the Worker automatically on every push to `main` that touches
+`workers/weather/**`. It needs one repository secret:
+
+- `CLOUDFLARE_API_TOKEN` — a Cloudflare API token with the **Edit Workers**
+  permission (Account → Workers Scripts: Edit). Add it under
+  GitHub → repo Settings → Secrets and variables → Actions.
+
+(The interactive `wrangler login` is only for local deploys; CI authenticates
+with this token. If your token spans multiple accounts, also set a
+`CLOUDFLARE_ACCOUNT_ID` secret and pass it through in the workflow.)
+
 ## Wire it to the site
 
 Set the Worker URL in `config/_default/params.toml`:

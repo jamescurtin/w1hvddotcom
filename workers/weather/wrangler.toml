@@ -1,0 +1,12 @@
+name = "w1hvd-weather"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+
+# Non-secret config. Set AW_MAC to your station's MAC address to select a
+# specific device; leave empty to use the first device on the account.
+[vars]
+AW_MAC = ""
+
+# Secrets are NOT stored here. Set them once with:
+#   wrangler secret put AW_APPLICATION_KEY
+#   wrangler secret put AW_API_KEY

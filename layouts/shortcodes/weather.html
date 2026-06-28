@@ -1,0 +1,151 @@
+{{- /* Live weather widget. Reads from the Cloudflare Worker proxy set in
+  site params (weather_api_url) so the Ambient Weather apiKey stays
+  server-side. All styling lives on static elements (captured by Tailwind
+  and dark-mode aware); JS only fills in text values. */
+-}}
+{{- $api := site.Params.weather_api_url -}}
+{{- $cards := slice
+  (dict "id" "aw-tempf" "label" "Temperature" "glyph" "°F")
+  (dict "id" "aw-feels" "label" "Feels Like" "glyph" "°F")
+  (dict "id" "aw-humidity" "label" "Humidity" "glyph" "%")
+  (dict "id" "aw-wind" "label" "Wind")
+  (dict "id" "aw-pressure" "label" "Pressure" "unit" "inHg")
+  (dict "id" "aw-rain" "label" "Rain Today" "unit" "in")
+-}}
+
+
+<div
+  id="aw-weather"
+  data-endpoint="{{ $api }}"
+  class="not-prose border-border dark:border-darkmode-border bg-light dark:bg-darkmode-light my-6 rounded-lg border p-6">
+  <div class="mb-5 flex items-center justify-between">
+    <h3 class="h5 mb-0">W1HVD Conditions</h3>
+    <span
+      id="aw-updated"
+      class="text-text-light dark:text-darkmode-text-light text-sm"
+      >&mdash;</span
+    >
+  </div>
+
+  <div class="grid grid-cols-2 gap-5 sm:grid-cols-3">
+    {{- range $cards }}
+      <div class="text-center">
+        <div class="text-text-light dark:text-darkmode-text-light text-sm">
+          {{ .label }}
+        </div>
+        <div
+          class="text-text-dark dark:text-darkmode-text-dark text-2xl font-bold">
+          <span id="{{ .id }}">&mdash;</span>{{- with .glyph }}{{ . }}{{ end }}
+          {{- with .unit }}
+            <span class="text-base font-normal">{{ . }}</span>
+          {{ end }}
+        </div>
+      </div>
+    {{- end }}
+  </div>
+
+  <p
+    id="aw-error"
+    class="text-text-light dark:text-darkmode-text-light mt-5 hidden text-sm"></p>
+
+  <p class="text-text-light dark:text-darkmode-text-light mt-5 text-xs">
+    Data via
+    <a
+      class="underline"
+      target="_blank"
+      rel="noopener"
+      href="https://ambientweather.net"
+      >Ambient Weather</a
+    >
+  </p>
+</div>
+
+<script>
+  (function () {
+    var root = document.getElementById("aw-weather");
+    var endpoint = root && root.getAttribute("data-endpoint");
+    var errEl = document.getElementById("aw-error");
+
+    function showError(msg) {
+      if (errEl) {
+        errEl.textContent = msg;
+        errEl.classList.remove("hidden");
+      }
+    }
+    if (!endpoint) {
+      showError("Weather is not configured yet.");
+      return;
+    }
+
+    function set(id, value) {
+      var node = document.getElementById(id);
+      if (node && value !== null && value !== undefined && value !== "") {
+        node.textContent = value;
+      }
+    }
+    function compass(deg) {
+      var dirs = [
+        "N",
+        "NNE",
+        "NE",
+        "ENE",
+        "E",
+        "ESE",
+        "SE",
+        "SSE",
+        "S",
+        "SSW",
+        "SW",
+        "WSW",
+        "W",
+        "WNW",
+        "NW",
+        "NNW",
+      ];
+      return dirs[Math.round(deg / 22.5) % 16];
+    }
+
+    function load() {
+      fetch(endpoint, { cache: "no-store" })
+        .then(function (r) {
+          if (!r.ok) throw new Error("HTTP " + r.status);
+          return r.json();
+        })
+        .then(function (j) {
+          var d = (j && j.data) || {};
+          set("aw-tempf", d.tempf != null ? Math.round(d.tempf) : null);
+          set("aw-feels", d.feelsLike != null ? Math.round(d.feelsLike) : null);
+          set("aw-humidity", d.humidity);
+          if (d.windspeedmph != null) {
+            var w = Math.round(d.windspeedmph) + " mph";
+            if (d.winddir != null) w += " " + compass(d.winddir);
+            set("aw-wind", w);
+          }
+          set(
+            "aw-pressure",
+            d.baromrelin != null ? d.baromrelin.toFixed(2) : null,
+          );
+          set(
+            "aw-rain",
+            d.dailyrainin != null ? d.dailyrainin.toFixed(2) : null,
+          );
+          if (d.date) {
+            set("aw-updated", "Updated " + new Date(d.date).toLocaleString());
+          }
+          if (errEl) errEl.classList.add("hidden");
+        })
+        .catch(function () {
+          showError("Live conditions are temporarily unavailable.");
+        });
+    }
+
+    load();
+    // Poll only while the tab is visible; refresh immediately on return.
+    setInterval(function () {
+      if (!document.hidden) load();
+    }, 60000);
+    document.addEventListener("visibilitychange", function () {
+      if (!document.hidden) load();
+    });
+  })();
+</script>

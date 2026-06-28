@@ -13,6 +13,11 @@ mainSections = ["blog"]
 custom_script = ""
 copyright = "James W. Curtin, Jr. (W1HVD) All Rights Reserved"
 
+# Weather widget: URL of the Cloudflare Worker proxy that returns the
+# Ambient Weather station's latest readings (keeps the apiKey server-side).
+# Deploy workers/weather/ and set this to its URL. See workers/weather/README.md.
+weather_api_url = "https://w1hvd-weather.jamescurtin.workers.dev"
+
 # Preloader
 [preloader]
 enable = false

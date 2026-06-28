@@ -1,0 +1,14 @@
+{
+  "name": "w1hvd-weather",
+  "version": "1.0.0",
+  "description": "Cloudflare Worker proxy for the W1HVD Ambient Weather station",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "tail": "wrangler tail"
+  },
+  "devDependencies": {
+    "wrangler": "^4.105.0"
+  }
+}

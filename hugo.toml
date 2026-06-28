@@ -12,7 +12,7 @@ googleAnalytics = "G-3VK6WEF77S"
 
 ########################## Permalinks ############################
 [permalinks.page]
-"pages" = "/:slugorfilename/"
+"pages" = "/:slugorcontentbasename/"
 
 
 ############################# Modules ############################
@@ -22,8 +22,9 @@ source = "assets"
 target = "assets"
 
 [[module.mounts]]
+disableWatch = true
 source = "hugo_stats.json"
-target = "assets/watching/hugo_stats.json"
+target = "assets/notwatching/hugo_stats.json"
 
 ############################# Build ##############################
 [build]
@@ -32,10 +33,7 @@ useResourceCacheWhen = 'fallback'
 [build.buildStats]
 enable = true
 [[build.cachebusters]]
-source = 'assets/watching/hugo_stats\.json'
-target = 'style\.css'
-[[build.cachebusters]]
-source = '(postcss|tailwind)\.config\.js'
+source = 'assets/notwatching/hugo_stats\.json'
 target = 'css'
 [[build.cachebusters]]
 source = 'assets/.*\.(js|ts|jsx|tsx)'

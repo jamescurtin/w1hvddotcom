@@ -1,4 +1,13 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"]
+  "extends": ["config:recommended"],
+  "minimumReleaseAge": "7 days",
+  "platformAutomerge": false,
+  "packageRules": [
+    {
+      "description": "Automerge routine (patch/minor/digest) updates once CI is green; majors always stay manual.",
+      "matchUpdateTypes": ["patch", "minor", "digest"],
+      "automerge": true
+    }
+  ]
 }

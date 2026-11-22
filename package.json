@@ -21,5 +21,10 @@
     "prettier-plugin-tailwindcss": "^0.8.0",
     "tailwind-bootstrap-grid": "^7.0.0",
     "tailwindcss": "^4.3.0"
+  },
+  "overrides": {
+    "@tailwindcss/typography": {
+      "postcss-selector-parser": "6.1.6"
+    }
   }
 }
